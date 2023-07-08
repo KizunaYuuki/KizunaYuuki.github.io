@@ -1,46 +1,203 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 <head>
-    <title>Chuyển đổi Excel thành JSON</title>
-    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
-    <script>
-        // Hàm chuyển đổi từ tệp Excel thành JSON
-        function excelToJson(file) {
-            var reader = new FileReader();
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Self -->
+    <link rel="stylesheet" href="style.css">
 
-            reader.onload = function (e) {
-                var data = new Uint8Array(e.target.result);
-                var workbook = XLSX.read(data, { type: 'array' });
-
-                var result = {};
-
-                workbook.SheetNames.forEach(function (sheetName) {
-                    var worksheet = workbook.Sheets[sheetName];
-                    var json = XLSX.utils.sheet_to_json(worksheet, { raw: true });
-                    result[sheetName] = json;
-                });
-
-                console.log(result); // In kết quả JSON ra console
-                // Thực hiện các thao tác khác với dữ liệu JSON tại đây
-            };
-
-            reader.readAsArrayBuffer(file);
-        }
-
-        // Khi tệp được chọn
-        function handleFileSelect(event) {
-            var files = event.target.files;
-            var file = files[0];
-            excelToJson(file);
-        }
-
-    </script>
+    <title>Testing Page</title>
 </head>
 
 <body>
-    <h2>Chuyển đổi Excel thành JSON</h2>
-    <input type="file" id="fileInput" accept=".xlsx, .xls" onchange="handleFileSelect(event)" />
+    <header class="min-[1024px]:sticky top-0 bg-[#ffffff95] backdrop-blur-[.75rem] dark:bg-[#20212495]">
+        <nav class="px-4 lg:px-6 py-[4px]">
+            <div class="flex flex-wrap justify-between items-center mx-auto">
+                <a href="https://kizunayuuki.github.io/" class="flex items-center">
+                    <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32"
+                        data-view-component="true"
+                        class="octicon octicon-mark-github mr-3 h-6 sm:h-9 fill-[#000000] dark:fill-[#ffffff]">
+                        <path
+                            d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
+                        </path>
+                    </svg>
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Time</span>
+                </a>
+                <div class="hidden flex items-center lg:order-2">
+                    <a href="#"
+                        class="text-gray-800 hover:bg-gray-50 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:text-white dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log
+                        in</a>
+                    <a href="#"
+                        class="dark:text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Get
+                        started</a>
+                    <button data-collapse-toggle="mobile-menu" type="button"
+                        class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                        <li>
+                            <a href="https://kizunayuuki.github.io/"
+                                class="block py-2 pr-4 pl-3 hover:underline hover:underline-offset-[4px] hover:text-[#0069c2] hover:bg-[#0085f230] dark:hover:text-white
+                                rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-[.5rem] dark:text-white"
+                                aria-current="page">Home</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block p-[.5rem] hover:underline hover:underline-offset-[4px] hover:text-[#0069c2] hover:bg-[#0085f230] 
+                                rounded text-gray-700 border-b border-gray-100 lg:hover:bg-[#0085f230] lg:border-0 lg:hover:text-primary-700 lg:p-[.5rem] dark:text-gray-400 lg:dark:hover:text-white dark:hover:text-white lg:dark:hover:bg-[#0085f230] dark:border-gray-700">About
+                                Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Chuyển đổi Excel thành JSON -->
+    <div class="hidden flex flex-wrap justify-center">
+        <div class="flex items-center justify-center w-[30vw]">
+            <label for="fileInput"
+                class="flex flex-col items-center justify-center w-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                <div class="flex flex-col items-center justify-center p-[.5rem]">
+                    <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                        </path>
+                    </svg>
+                    <p class="mb-2 text-center text-sm text-gray-500 dark:text-gray-400"><span
+                            class="font-semibold">Chuyển đổi Excel thành JSON<br />Click to upload</p>
+                </div>
+                <input id="fileInput" type="file" class="hidden" accept=".xlsx, .xls"
+                    onchange="handleFileSelect(event)" />
+            </label>
+        </div>
+    </div>
+
+    <!-- <img style="width: 50vw;" src="https://placehold.co/2000x500" sizes="100vw" alt="" srcset="
+        https://placehold.co/1600x400  1600w,
+        https://placehold.co/2000x500  2000w
+        " />
+    <div style="font-size: 5vw" id="data"></div>
+    <script> window.addEventListener("resize", updateText)
+        updateText()
+        function updateText() {
+            const data = document.querySelector("#data")
+            data.textContent = `Width: ${window.innerWidth}, Ratio: ${window.devicePixelRatio}`
+        }
+    </script> -->
+
+    <!-- Advanced Lazy Loading -->
+
+    <!-- scrolling parallax effect -->
+    <div class="hidden parallax-container h-[100vh]">
+        <div class="parallax-layer">
+            <img src="public/pexels-james-wheeler-417074.jpg" alt="Background Image">
+        </div>
+        <div class="parallax-layer">
+            <h1>Scrolling Parallax Effect</h1>
+            <p title="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit.</p>
+        </div>
+    </div>
+
+    <h1 class="text-center font-semibold">Albert Einstein Quotes</h1>
+    <!-- CarkSkew ~ Github -->
+    <div class="card" id="myCard">
+        <div class="card-text-animation">
+            <h1 class="typing-text text-white">Knowledge
+                - Any intelligent fool can make things bigger, more complex, and more violent. It takes a touch of genius -- and a lot of courage -- to move in the opposite direction.
+                - Imagination is more important than knowledge.
+                - The only real valuable thing is intuition.
+                - Everything should be made as simple as possible, but not simpler.
+                - Common sense is the collection of prejudices acquired by age eighteen.
+                - The secret to creativity is knowing how to hide your sources.
+                - The only thing that interferes with my learning is my education.
+                - The important thing is not to stop questioning. Curiosity has its own reason for existing.
+His Understanding of the World
+                - I want to know God's thoughts; the rest are details.
+                - The hardest thing in the world to understand is the income tax.
+                - I am convinced that He (God) does not play dice.
+                - The eternal mystery of the world is its comprehensibility.
+                - Weakness of attitude becomes weakness of character.
+                - Science without religion is lame. Religion without science is blind.
+                - Peace cannot be kept by force. It can only be achieved by understanding.
+                - The most incomprehensible thing about the world is that it is comprehensible.
+                - Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.
+                - Whoever undertakes to set himself up as a judge of Truth and Knowledge is shipwrecked by the laughter of the gods.
+                - I know not with what weapons World War III will be fought, but World War IV will be fought with sticks and stones.
+                - In order to form an immaculate member of a flock of sheep one must, above all, be a sheep.
+                - Not everything that counts can be counted, and not everything that can be counted counts. (Sign hanging in Einstein's office at Princeton)
+On People and Life
+                - Reality is merely an illusion, albeit a very persistent one.
+                - A person starts to live when he can live outside himself.
+                - I never think of the future. It comes soon enough.
+                - Sometimes one pays most for the things one gets for nothing.
+                - Anyone who has never made a mistake has never tried anything new.
+                - Great spirits have often encountered violent opposition from weak minds.
+                - Gravitation is not responsible for people falling in love.
+                - No, this trick won't work...How on earth are you ever going to explain in terms of chemistry and physics so important a
+biological phenomenon as first love?
+                - My religion consists of a humble admiration of the illimitable superior spirit who reveals himself in the slight details we are able to perceive with our frail and feeble mind.
+                - The release of atom power has changed everything except our way of thinking...the solution to this problem lies in the heart of mankind. If only I had known, I should have become a watchmaker.
+                - Great spirits have always found violent opposition from mediocrities. The latter cannot understand it when a man does not thoughtlessly submit to hereditary prejudices but honestly and courageously uses his intelligence.
+                - The most beautiful thing we can experience is the mysterious. It is the source of all true art and all science. He to whom this emotion is a stranger, who can no longer pause to wonder and stand rapt in awe, is as good as dead: his eyes are closed.
+                - Now he has departed from this strange world a little ahead of me. That means nothing. People like us, who believe in physics, know that the distinction between past, present, and future is only a stubbornly persistent illusion.
+                - You see, wire telegraph is a kind of a very, very long cat. You pull his tail in New York and his head is meowing in Los Angeles. Do you understand this? And radio operates exactly the same way: you send signals here, they receive them there. The only difference is that there is no cat.
+                - A human being is a part of a whole, called by us _universe_, a part limited in time and space. He experiences himself, his thoughts and feelings as something separated from the rest... a kind of optical delusion of his consciousness. This delusion is a kind of prison for us, restricting us to our personal desires and to affection for a few persons nearest to us. Our task must be to free ourselves from this prison by widening our circle of compassion to embrace all living creatures and the whole of nature in its beauty.
+On Math and Science and Education
+                - Science is a wonderful thing if one does not have to earn one's living at it.
+                - God does not care about our mathematical difficulties. He integrates empirically.
+                - The whole of science is nothing more than a refinement of everyday thinking.
+                - Technological progress is like an axe in the hands of a pathological criminal.
+                - We can't solve problems by using the same kind of thinking we used when we created them.
+                - Education is what remains after one has forgotten everything he learned in school.
+                - Do not worry about your difficulties in Mathematics. I can assure you mine are still greater.
+                - If A is a success in life, then A equals x plus y plus z. Work is x; y is play; and z is keeping your mouth shut.
+                - As far as the laws of mathematics refer to reality, they are not certain, as far as they are certain, they do not refer to reality.
+                - Yes, we have to divide up our time like that, between our politics and our equations. But to me our equations are far more important, for politics are only a matter of present concern. A mathematical equation stands forever.
+                - ...one of the strongest motives that lead men to art and science is escape from everyday life with its painful crudity and hopeless dreariness, from the fetters of one's own ever-shifting desires. A finely tempered nature longs to escape from the personal life into the world of objective perception and thought.
+                - Put your hand on a hot stove for a minute, and it seems like an hour. Sit with a pretty girl for an hour, and it seems like a minute. THAT'S relativity.</h1>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+        class="fixed bottom-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy 2023 <a href="https://kizunayuuki.github.io/"
+                class="hover:underline">MiniTime</a>.
+        </span>
+        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+            <li>
+                <a href="#" class="mr-4 hover:underline md:mr-6 p-[.5rem] hover:underline hover:underline-offset-[4px] hover:text-[#0069c2] hover:bg-[#0085f230] 
+                rounded text-gray-700 border-b border-gray-100 lg:hover:bg-[#0085f230] lg:border-0 lg:hover:text-primary-700 lg:p-[.5rem] dark:text-gray-400 lg:dark:hover:text-white dark:hover:text-white lg:dark:hover:bg-[#0085f230] dark:border-gray-700">About</a>
+            </li>
+            <li>
+                <a href="#" class="p-[.5rem] hover:underline hover:underline-offset-[4px] hover:text-[#0069c2] hover:bg-[#0085f230] 
+                rounded text-gray-700 border-b border-gray-100 lg:hover:bg-[#0085f230] lg:border-0 lg:hover:text-primary-700 lg:p-[.5rem] dark:text-gray-400 lg:dark:hover:text-white dark:hover:text-white lg:dark:hover:bg-[#0085f230] dark:border-gray-700">Contact</a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- JS được tải sau html -->
+    <script src="index.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 </body>
 
 </html>
