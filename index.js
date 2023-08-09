@@ -90,45 +90,49 @@
 }
 
 // Chuyển đổi từ tệp Excel thành JSON
-function excelToJson(file) {
-    var reader = new FileReader();
+{
+    function excelToJson(file) {
+        var reader = new FileReader();
 
-    reader.onload = function (e) {
-        var data = new Uint8Array(e.target.result);
-        var workbook = XLSX.read(data, { type: 'array' });
+        reader.onload = function (e) {
+            var data = new Uint8Array(e.target.result);
+            var workbook = XLSX.read(data, { type: 'array' });
 
-        var result = {};
+            var result = {};
 
-        workbook.SheetNames.forEach(function (sheetName) {
-            var worksheet = workbook.Sheets[sheetName];
-            var json = XLSX.utils.sheet_to_json(worksheet, { raw: true });
-            result[sheetName] = json;
-        });
+            workbook.SheetNames.forEach(function (sheetName) {
+                var worksheet = workbook.Sheets[sheetName];
+                var json = XLSX.utils.sheet_to_json(worksheet, { raw: true });
+                result[sheetName] = json;
+            });
 
-        console.log(result); // In kết quả JSON ra console
-        // Thực hiện các thao tác khác với dữ liệu JSON tại đây
-    };
+            console.log(result); // In kết quả JSON ra console
+            // Thực hiện các thao tác khác với dữ liệu JSON tại đây
+        };
 
-    reader.readAsArrayBuffer(file);
-}
+        reader.readAsArrayBuffer(file);
+    }
 
-// Khi tệp được chọn
-function handleFileSelect(event) {
-    var files = event.target.files;
-    var file = files[0];
-    excelToJson(file);
+    // Khi tệp được chọn
+    function handleFileSelect(event) {
+        var files = event.target.files;
+        var file = files[0];
+        excelToJson(file);
+    }
 }
 
 // Test Loading spinners
-function fetchData() {
-    var loadingSpinner = document.getElementById("loadingSpinner");
-    loadingSpinner.style.display = "block";
+{
+    function fetchData() {
+        var loadingSpinner = document.getElementById("loadingSpinner");
+        loadingSpinner.style.display = "block";
 
-    // Gửi yêu cầu AJAX hoặc thực hiện tác vụ tải dữ liệu
-    // Sau khi dữ liệu được tải xong, ẩn loading spinner
-    setTimeout(function () {
-        loadingSpinner.style.display = "none";
-        // alert("Dữ liệu đã tải xong");
-    }, 3000);
+        // Gửi yêu cầu AJAX hoặc thực hiện tác vụ tải dữ liệu
+        // Sau khi dữ liệu được tải xong, ẩn loading spinner
+        setTimeout(function () {
+            loadingSpinner.style.display = "none";
+            // alert("Dữ liệu đã tải xong");
+        }, 3000);
+    }
+    fetchData()
 }
-fetchData()

@@ -28,7 +28,7 @@
 }
 
 /* Dinh dang chung */
-*,
+*, ::before, ::after
 html {
     box-sizing: border-box;
     margin: 0;
