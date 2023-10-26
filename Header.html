@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Self -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="min-[1024px]:sticky top-0 bg-[#ffffff95] backdrop-blur-[.75rem] dark:bg-[#20212495]">
+        <nav class="px-4 lg:px-6 py-[4px]">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                <a href="https://kizunayuuki.github.io/" class="flex items-center">
+                    <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github mr-3 h-6 sm:h-9 fill-[#000000] dark:fill-[#ffffff]">
+                        <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+                    </svg>
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Time</span>
+                </a>
+                <!-- <div class="flex items-center lg:order-2">
+                    <a href="#"
+                        class="text-gray-800 hover:bg-gray-50 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:text-white dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log
+                        in</a>
+                    <a href="#"
+                        class="dark:text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Get
+                        started</a>
+                    <button data-collapse-toggle="mobile-menu" type="button"
+                        class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div> -->
+                <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                        <li class="#">
+                            <a href=""
+                                class="block py-2 pr-4 pl-3 hover:underline hover:underline-offset-[4px] hover:text-[#0069c2] hover:bg-[#0085f230] dark:hover:text-white
+                                rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-[.5rem] dark:text-white"
+                                aria-current="page">Home</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block py-2 pr-4 pl-3 hover:underline hover:underline-offset-[4px] hover:text-[#0069c2] hover:bg-[#0085f230] 
+                                rounded text-gray-700 border-b border-gray-100 lg:hover:bg-[#0085f230] lg:border-0 lg:hover:text-primary-700 lg:p-[.5rem] dark:text-gray-400 lg:dark:hover:text-white dark:hover:text-white lg:dark:hover:bg-[#0085f230] dark:border-gray-700 ">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="h-[100vh]">1. Qualified Purchasers receive an Apple Gift Card when they purchase an eligible Mac or iPad
+        at a Qualifying Location. Only one Apple Gift Card per eligible Mac or iPad per Qualified Purchaser. Offer
+        subject to availability. While supplies last. View full terms and conditions of offer here.
+        Apple Vision Pro has not been authorized as required by the rules of the Federal Communications Commission. This
+        device is not, and may not be, offered for sale or lease, or sold or leased, until authorization is obtained.
+        Apple Vision Pro will be available early next year on apple.com and at Apple retail stores in the U.S.
+        To access and use all the features of Apple Card, you must add Apple Card to Wallet on an iPhone or iPad with
+        the latest version of iOS or iPadOS. Update to the latest version by going to Settings > General > Software
+        Update. Tap Download and Install.</div>
+
+    <!-- JS được tải sau DOM HTML -->
+    <script src="index.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>

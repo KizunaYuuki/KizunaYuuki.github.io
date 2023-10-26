@@ -1,0 +1,54 @@
+.phone-icon {
+    display: inline-block;
+    position: relative;
+    animation: phone-ring 2s infinite;
+}
+
+.phone-border {
+    animation: phone-ring 1s infinite;
+}
+
+.phone-icon img {
+    font-size: 24px;
+    color: #333;
+    transition: transform 0.3s ease-in-out;
+}
+
+.phone-icon:hover img {
+    transform: rotate(140deg);
+}
+
+@keyframes phone-ring {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.contact-icon img {
+    transition: transform 0.3s ease-in-out;
+    border-radius: 9999px;
+}
+
+.contact-icon img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    z-index: 1;
+    /* Đặt chỉ số z cao hơn hình ảnh để hiển thị văn bản lên trên */
+}

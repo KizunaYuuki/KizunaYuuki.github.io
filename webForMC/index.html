@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Self -->
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Trang Chủ</title>
+</head>
+
+<body>
+    <header class="min-[1024px]:sticky top-0 bg-[#ffffff95] backdrop-blur-[.75rem] dark:bg-[#20212495] py-[16px]">
+        <nav class="px-4 lg:px-6">
+            <div class="flex flex-wrap justify-between items-center mx-auto">
+                <a href="./index.html" class="flex items-center">
+                    <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32"
+                        data-view-component="true"
+                        class="octicon octicon-mark-github mr-3 h-6 sm:h-9 fill-[#000000] dark:fill-[#ffffff]">
+                        <path
+                            d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
+                        </path>
+                    </svg>
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">MC - Good
+                        Choice</span>
+                </a>
+                <div class="hidden flex items-center lg:order-2">
+                    <a href="#"
+                        class="text-gray-800 hover:bg-gray-50 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:text-white dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log
+                        in</a>
+                    <a href="#"
+                        class="dark:text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Get
+                        started</a>
+                    <button data-collapse-toggle="mobile-menu" type="button"
+                        class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                        <li>
+                            <a href="./index.html"
+                                class="block py-2 pr-4 pl-3 hover:underline hover:underline-offset-[4px] hover:text-[#0069c2] hover:bg-[#0085f230] dark:hover:text-white
+                                rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-[.5rem] dark:text-white"
+                                aria-current="page">Trang Chủ</a>
+                        </li>
+                        <li>
+                            <a href="#post"
+                                class="block py-2 pr-4 pl-3 hover:underline hover:underline-offset-[4px] hover:text-[#0069c2] hover:bg-[#0085f230] dark:hover:text-white
+                                rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-[.5rem] dark:text-white"
+                                aria-current="page">Blog du lịch</a>
+                        </li>
+                        <li>
+                            <a href="./gioithieu.html"
+                                class="block p-[.5rem] hover:underline hover:underline-offset-[4px] hover:text-[#0069c2] hover:bg-[#0085f230] 
+                                rounded text-gray-700 border-b border-gray-100 lg:hover:bg-[#0085f230] lg:border-0 lg:hover:text-primary-700 lg:p-[.5rem] dark:text-gray-400 lg:dark:hover:text-white dark:hover:text-white lg:dark:hover:bg-[#0085f230] dark:border-gray-700">Giới
+                                Thiệu</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Content -->
+    <article class="min-[768px]:w-[100%] mx-auto">
+        <!-- Title -->
+        <!-- <section class="flex flex-wrap min-[768px]:text-left text-center justify-center min-[768px]:justify-between items-end mt-[3rem] p-[1rem]">
+            <div>
+                <h1 class="text-[100px] font-[900] leading-[.8] p-[.5rem]">YOUR <br> JOURNEY <br> BEGINS
+                </h1>
+            </div>
+            <div class="flex">
+                <a href=""
+                    class="text-[24px] font-[400] leading-[1] p-[.5rem] hover:underline hover:underline-offset-[4px] hover:text-[#0069c2] hover:bg-[#0085f230] 
+                rounded text-gray-700 border-gray-100 lg:hover:bg-[#0085f230] lg:border-0 lg:hover:text-primary-700 lg:p-[.5rem] dark:text-gray-400 lg:dark:hover:text-white dark:hover:text-white lg:dark:hover:bg-[#0085f230] dark:border-gray-700">Explore
+                    Our Offers</a>
+            </div>
+        </section> -->
+
+        <section
+            class="min-[1024px]:grid min-[1024px]:grid-flow-col flex flex-wrap flex-col-reverse content-center min-[1024px]:text-left text-center justify-center items-start mt-[3rem]">
+            <div class="col-span-1 max-w-[50vw]">
+                <h1
+                    class="text-[90px] font-[400] leading-[1.1] min-[768px]:block flex flex-wrap items-center justify-center">
+                    <span class="text-gray-400">Nguyễn Hoàng</span>
+                    <span class="min-[768px]:inline block"><strong
+                            class="font-[900] text-[#0ea5e9]">Thành</strong></span>
+                </h1>
+                <div class="text-left max-h-[100%]">
+                    <p>Xin chào, tôi là Nguyễn Hoàng Thành. Rất vui được gặp gỡ và kết nối với các bạn qua trang này. Cho
+                        phép tôi giới thiệu một chút về bản thân.</p>
+                    </div>
+            </div>
+            <section class="col-span-1 max-w-[50vw]">
+                <img class="min-[768px]:object-cover rounded-[8px] border-3 border-gray-700" src="./public/DSC08106 copy.jpg" alt="">
+            </section>
+        </section>
+
+        <!-- Hình ảnh -->
+        <!-- <section class="w-[100%] relative select-none">
+            <div>
+                <img class="object-cover" src="./public/StockSnap_K6K80SHQJO-cropped.jpg" alt="">
+            </div>
+            <div class="text-overlay">
+                <p class="text-[14px]">“Travel changes you. As you move through this life and this world, you change things slightly, you
+                    leave marks behind, however small. And in return, life and travel leaves marks on you.”
+                </p>
+                <p class="text-[14px]">—Anthony Bourdain</p>
+            </div>
+        </section> -->
+
+        <!-- Hình ảnh MC kiêm hướng dẫn viên du lịch -->
+        <!-- <section>
+            <a href="#"
+                class="flex w-auto my-[.25rem] py-[.25rem] min-[768px]:pr-[.5rem] min-[768px]:mr-[1rem] hover:underline hover:underline hover:underline-offset-[4px] hover:text-[#0069c2]
+        rounded text-gray-700 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:hover:text-white dark:hover:text-white">
+                <img src="./public/DSC08106.jpg" class="w-[15rem] object-cover rounded-full" alt="">
+            </a>
+        </section> -->
+
+        <!-- Giới thiệu về chúng tôi -->
+        <section>
+            <p>Xin chào! Tôi là John Smith, MC kiêm hướng dẫn viên du lịch với hơn 10 năm kinh nghiệm trong ngành du
+                lịch. Tôi yêu thích việc khám phá và chia sẻ những kỳ quan của thế giới với bạn.</p>
+        </section>
+
+        <!-- Dịch vụ của chúng tôi -->
+        <section>
+            <h1><strong>Dịch vụ của chúng tôi:</strong></h1>
+            <ol>
+                <li>
+                    Hướng dẫn du lịch địa phương với kiến thức sâu về lịch sử, văn hóa và địa điểm nổi tiếng.
+                </li>
+                <li>Tour du lịch chuyên biệt: Thám hiểm núi rừng, du ngoạn hoang dã, đắm mình trong văn hóa địa phương,
+                    và
+                    nhiều hành trình hấp dẫn khác.
+                </li>
+                <li>
+                    Tour du lịch doanh nghiệp: Cung cấp hướng dẫn du lịch chuyên nghiệp cho các chuyến công tác và
+                    team-building.
+                </li>
+            </ol>
+        </section>
+
+        <!-- Kỹ năng và chuyên môn -->
+        <section>
+            <h1><strong>Kỹ năng và chuyên môn:</strong></h1>
+            <p>
+                Tôi có thể nói lưu loát tiếng Anh, tiếng Pháp và tiếng Tây Ban Nha. Kiến thức sâu về lịch sử, văn hóa và
+                địa lý của nhiều điểm đến trên khắp thế giới. Tôi luôn sẵn lòng lắng nghe và đáp ứng mọi yêu cầu của
+                khách hàng.
+            </p>
+        </section>
+
+        <!-- Danh sách các tour du lịch -->
+        <section>
+            <h1><strong>Danh sách các tour du lịch:</strong></h1>
+            <ol class="list-decimal">
+                <li>Du lịch hành trình lịch sử Paris: Khám phá vẻ đẹp lộng lẫy của Paris, thủ đô ánh sáng.</li>
+                <li>Leo núi Everest: Chinh phục đỉnh cao nhất thế giới cùng với đội ngũ chuyên nghiệp.</li>
+                <li>Cuộc hành trình cùng bản địa Amazon: Thoả sức khám phá rừng rậm và sông Amazon.</li>
+                <li>Khám phá văn hóa Bali: Lắng nghe huyền thoại và truyền thống của đảo Bali thần bí.</li>
+                <li>Tour du lịch doanh nghiệp Bangkok: Xây dựng tinh thần đồng đội trong môi trường mới lạ.</li>
+            </ol>
+        </section>
+
+        <!-- Phản hồi từ khách hàng: -->
+        <section>
+            <h1><strong>Phản hồi từ khách hàng:</strong></h1>
+            <p>"John là một hướng dẫn viên tuyệt vời! Lịch trình tour của chúng tôi rất hấp dẫn và John luôn giữ cho
+                chúng tôi vui vẻ và an toàn." - Mary, khách hàng hài lòng.</p>
+        </section>
+
+    </article>
+
+    <!-- Sticky Contact -->
+    <section class="rounded-[.5rem] fixed bottom-[1.5rem] right-[1.5rem] bg-[#1718191a] p-[1rem]">
+        <a href="tel:0988790407"
+            class="flex flex-wrap justify-center content-center items-center bg-[#77b3d4] rounded-full">
+            <span
+                class="phone-icon flex w-auto hover:underline hover:underline hover:underline-offset-[4px] hover:text-[#0069c2] text-gray-700 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:hover:text-white dark:hover:text-white">
+                <img src="./public/phone.png" class="rounded-full text-gray-700 w-[2.5rem]" alt="">
+            </span>
+            <span class="px-[.5rem] text-white">Di động</span>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 hidden">
+        <div
+            class="min-[1536px]:w-[50vw] min-[1024px]:w-[70vw] min-[768px]:px-[5rem] min-[768px]:mx-auto min-[768px]:items-center min-[768px]:items-stretch min-[768px]:flex-row min-[768px]:justify-between min-[768px]:flex flex flex-wrap flex-col content-center z-20 w-full p-4 dark:bg-gray-800">
+            <!-- Giới thiệu -->
+            <section class="flex flex-wrap flex-row justify-center content-center items-center min-[768px]:block">
+                <strong class="hidden min-[768px]:w-full min-[768px]:block">Giới Thiệu</strong>
+                <a href="#"
+                    class="flex w-auto my-[.25rem] py-[.25rem] min-[768px]:pr-[.5rem] min-[768px]:mr-[1rem] hover:underline hover:underline hover:underline-offset-[4px] hover:text-[#0069c2]
+            rounded text-gray-700 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:hover:text-white dark:hover:text-white">
+                    <img src="./public/DSC08106.jpg" class="w-[15rem] object-cover rounded-full" alt="">
+                </a>
+                <span class="w-[15rem] block text-center text-[.875rem] p-[1rem] min-[768px]:p-[0]">
+                    "Hãy là thay đổi mà bạn muốn thấy trong thế giới." - Mahatma Gandhi
+                    "Cuộc sống không được đo bằng số lần bạn thở, mà được đo bằng những khoảnh khắc làm cho bạn hít
+                    thở." -
+                    Maya Angelou
+                </span>
+            </section>
+
+            <!-- Liên Hệ -->
+            <section class="flex flex-wrap flex-row justify-center content-center items-center min-[768px]:block">
+                <strong class="hidden min-[768px]:w-full min-[768px]:block text-[.875rem]">Liên Hệ</strong>
+                <a href="#"
+                    class="flex min-[768px]:w-[7rem] w-auto my-[.25rem] py-[.5rem] min-[768px]:pr-[.5rem] mr-[1rem] hover:underline hover:underline hover:underline-offset-[4px] hover:text-[#0069c2]
+            rounded text-gray-700 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:hover:text-white dark:hover:text-white">
+                    <img src="./public/Facebook_f_logo_(2021).svg.png" width="32px" alt="">
+                    <span class="ml-[.5rem] flex flex-wrap content-center text-[.875rem]">Facebook</span>
+                </a>
+                <a href="#"
+                    class="flex min-[768px]:w-[7rem] w-auto my-[.25rem] py-[.5rem] min-[768px]:pr-[.5rem] mr-[1rem] hover:underline hover:underline hover:underline-offset-[4px] hover:text-[#0069c2]
+                rounded text-gray-700 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:hover:text-white dark:hover:text-white">
+                    <img src="./public/YouTube_social_red_circle_(2017).svg" width="32px" alt="">
+                    <span class="ml-[.5rem] flex flex-wrap content-center text-[.875rem]">Youtube</span>
+                </a>
+                <a href="mailto:mc.nghoangthanh@gmail.com"
+                    class="flex min-[768px]:w-[7rem] w-auto my-[.25rem] py-[.5rem] min-[768px]:pr-[.5rem] mr-[1rem] hover:underline hover:underline hover:underline-offset-[4px] hover:text-[#0069c2]
+                rounded text-gray-700 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:hover:text-white dark:hover:text-white">
+                    <img src="./public/Circle-icons-mail.svg.png" width="32px" alt="">
+                    <span class="ml-[.5rem] flex flex-wrap content-center text-[.875rem]">Email</span>
+                </a>
+                <a href="tel:0988790407"
+                    class="flex min-[768px]:w-[7rem] w-auto my-[.25rem] py-[.5rem] min-[768px]:pr-[.5rem] mr-[1rem] hover:underline hover:underline hover:underline-offset-[4px] hover:text-[#0069c2]
+            rounded text-gray-700 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:hover:text-white dark:hover:text-white">
+                    <img src="./public/phone.png" class="rounded-full text-gray-700" width="32px" alt="">
+                    <span class="ml-[.5rem] flex flex-wrap content-center text-[.875rem]">Di động</span>
+                </a>
+            </section>
+        </div>
+    </footer>
+
+    <!-- JS được tải sau html -->
+    <script src="./index.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Thêm script Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.0/dist/alpine.js"></script>
+</body>
+
+</html>

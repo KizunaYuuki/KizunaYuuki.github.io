@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="style.css">
+
+<body>
+
+    <button class="btn" id="submitButton">
+        <span>Submit</span>
+        <img src="https://i.cloudup.com/2ZAX3hVsBE-3000x3000.png" height="24" width="24">
+    </button>
+
+    <script>
+        // Lắng nghe sự kiện click trên nút
+        var submitButton = document.getElementById("submitButton");
+        submitButton.addEventListener("click", function () {
+            // Áp dụng animation khi nút được click
+            this.style.animation = "extend 1s ease-in-out forwards";
+            this.querySelector("span").style.animation = "disappear 1s ease-in-out forwards";
+            this.querySelector("img").style.animation = "appear 1s ease-in-out forwards";
+        });
+    </script>
+
+</body>
+
+</html>
