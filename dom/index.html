@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Self -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="#" />
+    <title>Testing Page</title>
+</head>
+
+<body onload="console.log('Welcome to my home page!');">
+    <main>
+        <p>
+            adf
+        </p>
+        <main>
+            <div class="container">
+                <textarea class="story"></textarea>
+                <button id="set-text" type="button">Set text content</button>
+                <button id="clear-text" type="button">Clear text content</button>
+            </div>
+
+            <div class="container">
+                <div class="parent">parent</div>
+                <button id="add-child" type="button">Add a child</button>
+                <button id="remove-child" type="button">Remove child</button>
+            </div>
+            <input type="button" value="Set paragraph background color" onclick="setBackground()" />
+
+            <input type="button" value="Change this document." onclick="change()" />
+            <h2>Header</h2>
+            <p>Paragraph</p>
+            <p>Paragraph</p>
+            <p>Paragraph</p>
+            <p>Paragraph</p>
+            <p>Paragraph</p>
+            <p>Paragraph</p>
+        </main>
+
+        <!-- JS được tải sau html -->
+        <script src="index.js" defer></script>
+</body>
+
+</html>
